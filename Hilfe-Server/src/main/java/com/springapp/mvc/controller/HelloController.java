@@ -9,10 +9,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+//@Controller
+@RestController
 @RequestMapping("/")
 public class HelloController {
 
@@ -32,4 +32,17 @@ public class HelloController {
         User user = hilfeService.getdetails();
         return consumer;
 	}
+
+    //@RequestMapping(method = {RequestMethod.GET,RequestMethod.HEAD})
+    @RequestMapping("/printHello")
+    public Consumer printHello(@RequestParam (value="name" )String name) {
+        Consumer consumer = new Consumer();
+        consumer.setId(123L);
+        consumer.setRating(new Float(2.3));
+        consumer.setUserId(1234L);
+        //model.addAttribute("message", consumer);
+        User user = hilfeService.getdetails();
+        return consumer;
+    }
+
 }
