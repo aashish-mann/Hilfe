@@ -52,4 +52,13 @@ public class Consumer {
 	public void setRating(Float rating) {
 		this.rating = rating;
 	}
+
+    @Override
+    public String toString() {
+        return "Consumer{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", rating=" + rating +
+                '}';
+    }
 }
