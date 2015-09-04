@@ -11,6 +11,7 @@
         <spring.version>4.1.1.RELEASE</spring.version>
         <log4j.version>1.2.17</log4j.version>
         <jstl.version>1.2</jstl.version>
+        <amq.version>5.8.0</amq.version>
     </properties>
 
     <dependencies>
@@ -50,6 +51,11 @@
             <version>2.5</version>
         </dependency>
 
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-all</artifactId>
+			<version>${amq.version}</version>
+		</dependency>
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>

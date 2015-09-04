@@ -28,7 +28,11 @@ public class HilfeServiceImpl implements IHilfeService{
         return hilfeDao.validateLogin(login.getUsername(),login.getPassword());
     }
 
-
+	@Override
+	public void registerUser(User user) {
+//	TODO: rwali continue here	hilfeDao.saveUser();
+		
+	}
 
 
 }

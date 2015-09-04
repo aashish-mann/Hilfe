@@ -12,4 +12,6 @@ public interface IHilfeService {
 
     public Login validateLogin(Login login);
 
+	public void registerUser(User user);
+
 }

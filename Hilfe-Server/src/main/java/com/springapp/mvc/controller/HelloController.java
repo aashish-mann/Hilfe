@@ -1,7 +1,9 @@
 package com.springapp.mvc.controller;
 
+import com.springapp.mvc.entity.Consumer;
 import com.springapp.mvc.entity.User;
 import com.springapp.mvc.service.IHilfeService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +23,13 @@ public class HelloController {
 
 
     @RequestMapping(method = {RequestMethod.GET,RequestMethod.HEAD})
-	public String printWelcome(ModelMap model) {
-		model.addAttribute("message", "Hello world!");
+	public Consumer printWelcome(ModelMap model) {
+    	Consumer consumer = new Consumer();
+    	consumer.setId(123L);
+    	consumer.setRating(new Float(2.3));
+    	consumer.setUserId(1234L);
+		model.addAttribute("message", consumer);
         User user = hilfeService.getdetails();
-        return "hello";
+        return consumer;
 	}
 }
