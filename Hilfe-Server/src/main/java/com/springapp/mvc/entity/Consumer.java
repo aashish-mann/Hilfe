@@ -12,24 +12,22 @@ import javax.persistence.Table;
 
 /**
  * @author rahul
+ *
  */
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "consumer")
+public class Consumer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Long id;
 
-	@Column(name = "name")
-	private String name;
+	@Column(name = "user_id")
+	private Long userId;
 
-	@Column(name = "userId")
-	private String userId;
-
-	@Column(name = "password")
-	private String password;
+	@Column(name = "rating")
+	private Float rating;
 
 	public Long getId() {
 		return id;
@@ -39,27 +37,19 @@ public class User {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 
-	public String getPassword() {
-		return password;
+	public Float getRating() {
+		return rating;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setRating(Float rating) {
+		this.rating = rating;
 	}
 }
