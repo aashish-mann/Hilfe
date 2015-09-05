@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.springapp.mvc.entity.Consumer;
 import com.springapp.mvc.entity.User;
 import com.springapp.mvc.service.IHilfeService;
+import com.springapp.mvc.sro.UserSRO;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +14,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
-import javax.ws.rs.core.MultivaluedMap;
 
 
 //@Controller
@@ -76,4 +76,12 @@ public class HelloController {
 
         return consumer;
     }
+
+	@RequestMapping(value = "/validateUser", method = RequestMethod.POST, consumes = "application/json")
+	public String validateUser(@RequestBody UserSRO user) {
+		String s = hilfeService.validateUser(user);
+		System.out.println(s+"**************");
+		return s;
+	}
+    
 }

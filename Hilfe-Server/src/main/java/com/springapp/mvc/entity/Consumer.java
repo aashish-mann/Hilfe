@@ -3,6 +3,8 @@
  */
 package com.springapp.mvc.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,8 +18,16 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "consumer")
-public class Consumer {
+public class Consumer implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public Consumer() {
+		// TODO Auto-generated constructor stub
+	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")

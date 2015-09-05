@@ -3,6 +3,8 @@ package com.springapp.mvc.service;
 import com.springapp.mvc.dao.IHilfeDao;
 import com.springapp.mvc.entity.Login;
 import com.springapp.mvc.entity.User;
+import com.springapp.mvc.sro.UserSRO;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,5 +36,11 @@ public class HilfeServiceImpl implements IHilfeService{
 		
 	}
 
+	@Override
+	@Transactional
+	public String validateUser(UserSRO user) {
+		System.out.println(user.getName());
+		return hilfeDao.validateUser(user.getUserId(), user.getPassword());
+	}
 
 }

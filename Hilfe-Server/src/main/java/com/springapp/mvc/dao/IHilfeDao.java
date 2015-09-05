@@ -12,4 +12,6 @@ public interface IHilfeDao {
 
     public Login validateLogin(String username,String password);
 
+	String validateUser(String username, String password);
+
 }
